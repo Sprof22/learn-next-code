@@ -5,7 +5,6 @@ const Users = ({user}) => {
     <>
       <p>{user.name}</p>
       <p>{user.email}</p>
-      <p>{user.username}</p>
     </>
   );
 };
