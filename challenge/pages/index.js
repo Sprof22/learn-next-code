@@ -62,7 +62,7 @@ const ItemCard = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: stretch;
-  width: 420px; 
+  width: 420px;
   margin-bottom: 30px;
   border-radius: 15px;
   > p {
@@ -77,7 +77,6 @@ const ItemCard = styled.div`
 
   > div {
     padding: 30px;
-    
   }
 
   > div > h3 {
@@ -89,69 +88,68 @@ const ItemCard = styled.div`
     line-height: 30px;
   }
   > div {
-     
-      &:nth-of-type(2) {
-        display: flex;
-        grid-gap: 20px;
-        align-items: center;
-        justify-content: start;
-        width: 80%;
-        > img {
-          transition: transform .2s;
-          &: hover {
-            transform: scale(1.2);
-          }
+    &:nth-of-type(2) {
+      display: flex;
+      grid-gap: 20px;
+      align-items: center;
+      justify-content: start;
+      width: 80%;
+      > img {
+        transition: transform 0.2s;
+        &: hover {
+          transform: scale(1.2);
         }
-        > a {
-          transition: transform  .2s;
-          &: hover {
-            transform: translateX(10px);
-          }
+      }
+      > a {
+        transition: transform 0.2s;
+        &: hover {
+          transform: translateX(10px);
         }
       }
     }
+  }
 
   >&: nth-of-type(1) img {
     width: 100%;
     border-radius: 15px 15px 0px 0px;
-    
   }
 
-  ${'' /* @media (max-width: 450px) {
+  ${
+    "" /* @media (max-width: 450px) {
     > div{
       background-color: red,
     }
-  } */}
+  } */
+  }
   @media (max-width: 450px) {
-  display: flex;
-      width: auto;
+    display: flex;
+    width: auto;
     height: auto;
     margin: 10px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: stretch;
-  margin-bottom: 18px;
-  border-radius: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: stretch;
+    margin-bottom: 18px;
+    border-radius: 15px;
 
-  > img {
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    width: 100%; 
-  }
-  > div {
-    padding: 20px;
-  }
+    > img {
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      width: 100%;
+    }
+    > div {
+      padding: 20px;
+    }
 
-  > div > h3 {
-    font-size: 22px;
-    line-height: 30px;
-  }
-  > div > p {
-    font-size: 16px;
-    line-height: 26px;
-  }
-  > div {
-     
+    > div > h3 {
+      font-size: 22px;
+      line-height: 30px;
+    }
+    > div > p {
+      font-size: 16px;
+      line-height: 26px;
+    }
+    > div {
       &:nth-of-type(2) {
         display: flex;
         grid-gap: 20px;
@@ -159,13 +157,13 @@ const ItemCard = styled.div`
         justify-content: start;
         width: 80%;
         > img {
-          transition: transform .2s;
+          transition: transform 0.2s;
           &: hover {
             transform: scale(1.2);
           }
         }
         > a {
-          transition: transform  .2s;
+          transition: transform 0.2s;
           font-size: 16px;
           &: hover {
             transform: translateX(7px);
@@ -191,7 +189,7 @@ export default function Home() {
             </div>
             <div>
               <img src="./arrow-circle.svg" />
-              <Link href="/learnMore">Learn  More</Link>
+              <Link href="/learnMore">Learn More</Link>
             </div>
           </ItemCard>
         ))}
