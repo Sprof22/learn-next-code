@@ -31,10 +31,10 @@ export const MainContainer = styled.div`
   align-items: center;
 
   @media (max-width: 1350px) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin: auto
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 900px;
   }
 
   @media (max-width: 992px) {
