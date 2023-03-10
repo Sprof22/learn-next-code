@@ -91,7 +91,19 @@ const ItemCard = styled.div`
         grid-gap: 20px;
         align-items: center;
         justify-content: start;
-        width: 80%
+        width: 80%;
+        > img {
+          transition: transform .2s;
+          &: hover {
+            transform: scale(1.2);
+          }
+        }
+        > a {
+          transition: transform .2s;
+          &: hover {
+            transform: translateX(10px);
+          }
+        }
       }
     }
 
