@@ -62,19 +62,20 @@ const ItemCard = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: stretch;
-  width: 420px;
   margin-bottom: 30px;
   border-radius: 15px;
+
+  border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    overflow: hidden;
   > p {
     font-size: 18px;
     padding: 29px;
   }
 
-  > img {
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-  }
-
+ > img {
+  width: 100%;
+ }
   > div {
     padding: 30px;
   }
@@ -121,11 +122,11 @@ const ItemCard = styled.div`
     }
   } */
   }
-  @media (max-width: 450px) {
+  @media (max-width: 992px) {
     display: flex;
-    width: auto;
+    max-width: 350px;
     height: auto;
-    margin: 10px;
+    margin: 20px;
     flex-direction: column;
     align-items: flex-start;
     justify-content: stretch;
@@ -133,8 +134,6 @@ const ItemCard = styled.div`
     border-radius: 15px;
 
     > img {
-      border-top-left-radius: 25px;
-      border-top-right-radius: 25px;
       width: 100%;
     }
     > div {
