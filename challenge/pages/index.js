@@ -62,8 +62,7 @@ const ItemCard = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: stretch;
-  width: 420px; n 
-  height: 525px;
+  width: 420px; 
   margin-bottom: 30px;
   border-radius: 15px;
   > p {
@@ -125,11 +124,12 @@ const ItemCard = styled.div`
   } */}
   @media (max-width: 450px) {
   display: flex;
+      width: auto;
+    height: auto;
+    margin: 10px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: stretch;
-  width: 350px; 
-  height: 525px;
   margin-bottom: 18px;
   border-radius: 15px;
 
