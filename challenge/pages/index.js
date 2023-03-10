@@ -18,17 +18,22 @@ const details = [
     img: "./pic.svg",
     header: "The Virtual Event Production Kit",
     text: "Want templates built by event leaders for event leaders? In this kit, you’ll get seven templates and a glossary of terms ...",
-  }
+  },
 ];
 
-const MainContainer = styled.div`
+export const MainContainer = styled.div`
   display: flex;
   grid-gap: 19px;
   max-width: 1440px;
   margin: auto;
   margin-top: 100px;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
+
+  @media (max-width: 1350px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   @media (max-width: 992px) {
     flex-direction: column;
@@ -73,25 +78,30 @@ const ItemCard = styled.div`
     width: 100%;
     border-radius: 15px 15px 0px 0px;
   }
+
+  @media (max-width: 450px) {
+    > div{
+      background-color: red,
+    }
+  }
 `;
 
 export default function Home() {
   return (
     <MainContainer className={inter.className}>
-   {details.map(detail => (
-    <ItemCard className="item-card">
-        <img src={detail.img} alt="" />
-        <div>
-          <h3>{detail.header}</h3>
-          <p>{detail.text}</p>
-        </div>
-        <div>
-        <img src="./arrow-circle.svg" />
-        <Link href="/">Learn More</Link>
-        </div>
-        
-      </ItemCard>
-   ))}
+      {details.map((detail) => (
+        <ItemCard className="item-card">
+          <img src={detail.img} alt="" />
+          <div>
+            <h3>{detail.header}</h3>
+            <p>{detail.text}</p>
+          </div>
+          <div>
+            <img src="./arrow-circle.svg" />
+            <Link href="/learnMore">Learn More</Link>
+          </div>
+        </ItemCard>
+      ))}
     </MainContainer>
   );
 }

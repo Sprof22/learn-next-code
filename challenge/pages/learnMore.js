@@ -1,8 +1,9 @@
 import React from 'react'
+import { MainContainer } from '.'
 
 const learnMore = () => {
   return (
-    <div>learn-more</div>
+    <MainContainer><h1>What more would you like to Learn?</h1></MainContainer>
   )
 }
 
