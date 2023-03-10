@@ -28,6 +28,11 @@ const Body = styled.div`
     line-height: 50px;
     letter: -2%;
   }
+  @media (max-width: 450px) {
+    font-size: 35px;
+    line-height: 40px;
+    margin-top: 18px;
+  }
 `;
 
 export const MainContainer = styled.div`
@@ -99,7 +104,7 @@ const ItemCard = styled.div`
           }
         }
         > a {
-          transition: transform .2s;
+          transition: transform  .2s;
           &: hover {
             transform: translateX(10px);
           }
@@ -118,6 +123,56 @@ const ItemCard = styled.div`
       background-color: red,
     }
   } */}
+  @media (max-width: 450px) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+  width: 350px; 
+  height: 525px;
+  margin-bottom: 18px;
+  border-radius: 15px;
+
+  > img {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 100%; 
+  }
+  > div {
+    padding: 20px;
+  }
+
+  > div > h3 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  > div > p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  > div {
+     
+      &:nth-of-type(2) {
+        display: flex;
+        grid-gap: 20px;
+        align-items: center;
+        justify-content: start;
+        width: 80%;
+        > img {
+          transition: transform .2s;
+          &: hover {
+            transform: scale(1.2);
+          }
+        }
+        > a {
+          transition: transform  .2s;
+          &: hover {
+            transform: translateX(10px);
+          }
+        }
+      }
+    }
+  }
 `;
 
 export default function Home() {
