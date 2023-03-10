@@ -33,6 +33,8 @@ export const MainContainer = styled.div`
   @media (max-width: 1350px) {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: auto
   }
 
   @media (max-width: 992px) {
