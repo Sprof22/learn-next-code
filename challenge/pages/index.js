@@ -166,6 +166,7 @@ const ItemCard = styled.div`
         }
         > a {
           transition: transform  .2s;
+          font-size: 16px;
           &: hover {
             transform: translateX(7px);
           }
