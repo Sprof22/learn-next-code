@@ -10,23 +10,32 @@ const details = [
     text: "Want templates built by event leaders for event leaders? In this kit, you’ll get seven templates and a glossary of terms ...",
   },
   {
-    img: "./pic.svg",
+    img: "./pic1.svg",
     header: "The Virtual Event Production Kit",
     text: "Want templates built by event leaders for event leaders? In this kit, you’ll get seven templates and a glossary of terms ...",
   },
   {
-    img: "./pic.svg",
+    img: "./pic2.svg",
     header: "The Virtual Event Production Kit",
     text: "Want templates built by event leaders for event leaders? In this kit, you’ll get seven templates and a glossary of terms ...",
   },
 ];
+
+const Body = styled.div`
+  h1 {
+    text-align: center;
+    font-size: 42px;
+    line-height: 50px;
+    letter: -2%;
+  }
+`;
 
 export const MainContainer = styled.div`
   display: flex;
   grid-gap: 19px;
   max-width: 1440px;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 70px;
   justify-content: center;
   align-items: center;
 
@@ -38,6 +47,7 @@ export const MainContainer = styled.div`
   }
 
   @media (max-width: 992px) {
+    display: flex;
     flex-direction: column;
   }
 `;
@@ -57,7 +67,8 @@ const ItemCard = styled.div`
   }
 
   > img {
-    border-radius: 25px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
   }
 
   > div {
@@ -65,6 +76,14 @@ const ItemCard = styled.div`
     
   }
 
+  > div > h3 {
+    font-size: 26px;
+    line-height: 35px;
+  }
+  > div > p {
+    font-size: 18px;
+    line-height: 30px;
+  }
   > div {
      
       &:nth-of-type(2) {
@@ -79,31 +98,36 @@ const ItemCard = styled.div`
   >&: nth-of-type(1) img {
     width: 100%;
     border-radius: 15px 15px 0px 0px;
+    
   }
 
-  @media (max-width: 450px) {
+  ${'' /* @media (max-width: 450px) {
     > div{
       background-color: red,
     }
-  }
+  } */}
 `;
 
 export default function Home() {
   return (
-    <MainContainer className={inter.className}>
-      {details.map((detail) => (
-        <ItemCard className="item-card">
-          <img src={detail.img} alt="" />
-          <div>
-            <h3>{detail.header}</h3>
-            <p>{detail.text}</p>
-          </div>
-          <div>
-            <img src="./arrow-circle.svg" />
-            <Link href="/learnMore">Learn More</Link>
-          </div>
-        </ItemCard>
-      ))}
-    </MainContainer>
+    <Body>
+      <h1>The resources you need</h1>
+      <MainContainer>
+        {details.map((detail) => (
+          <ItemCard className="item-card">
+            <img src={detail.img} alt="" />
+
+            <div>
+              <h3>{detail.header}</h3>
+              <p>{detail.text}</p>
+            </div>
+            <div>
+              <img src="./arrow-circle.svg" />
+              <Link href="/learnMore">Learn  More</Link>
+            </div>
+          </ItemCard>
+        ))}
+      </MainContainer>
+    </Body>
   );
 }

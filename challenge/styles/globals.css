@@ -1,4 +1,7 @@
 
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Roboto&display=swap');
+
 html,
 body {
     padding: 0;
@@ -8,6 +11,18 @@ body {
     background: #f5f5f5;
 }
 
+h1, h3 {
+   font-family: 'Crimson Text', serif;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
 .item-card{
     background: rgb(201, 189, 185, 0.25);
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }
