@@ -44,6 +44,13 @@ export const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media (max-width: 1570px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 900px;
+    background: red;
+  }
   @media (max-width: 1350px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
