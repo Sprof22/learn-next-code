@@ -50,6 +50,9 @@ export default function Details() {
                         <th>Value</th>
                     </tr>
                 </thead>
+                <tbody>
+                    
+                </tbody>
             </table>
         </div>
       </div>
