@@ -1,31 +1,60 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import styled from "styled-components";
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
-const inter = Inter({ subsets: ['latin'] })
+export const PokemonCard = styled.div`
+img {
+  max-height: 200px;
+}
+
+h3{
+  color: green
+}
+`
+
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  margin: auto;
+  max-width: 1440px;
+  justify-content: space-between;
+
+`
 
 export default function Home() {
-  const [pokeman, setPokeman] = useState([])
+  const [pokemon, setPokemon] = useState([])
   useEffect(() => {
     async function getPokemon(){
-      let res = await fetch ('https://jherr-pokemon.s3.us-west-1.amazonaws.com/index.json')
-      res = await res.json();
-console.log(res);
-       setPokeman([])
-    }  
+      const res = await fetch ('https://jherr-pokemon.s3.us-west-1.amazonaws.com/index.json')
+      
+       setPokemon(await res.json())
+    }   
+
     getPokemon() 
   }, [])
   
   return (
-    <>
+    <div style={{background: '#fff'}}>
       <Head>
-        <title>The Pokeman List</title>
+        <title>The Pokemon List</title>
       </Head>
       <div>
-        {JSON.stringify(pokeman)}
+      <Grid>
+
+      {pokemon.map((pokemon) => (
+        <PokemonCard>
+          <Link href={`/pokemon/${pokemon.id}`} >
+            <img src={`https://jherr-pokemon.s3.us-west-1.amazonaws.com/${pokemon.image}`} alt='' />
+            <h3>{pokemon.name}</h3>
+          </Link>
+        </PokemonCard>
+      ))}
+      </Grid>
       </div>
         
-    </>
+    </div>
   )
 }
