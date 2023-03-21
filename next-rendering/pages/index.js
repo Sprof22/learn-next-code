@@ -5,18 +5,21 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 export const PokemonCard = styled.div`
+display: flex;
+align-items: center;
 img {
   max-height: 200px;
+
 }
 
 h3{
-  color: green
+  color: green;
 }
 `
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: repeat(4, 150px);
   grid-gap: 10px;
   margin: auto;
   max-width: 1440px;
