@@ -61,3 +61,13 @@ export default function Home() {
     </div>
   )
 }
+
+
+export async function getServerSideProps() {
+  const res = await fetch ('https://jherr-pokemon.s3.us-west-1.amazonaws.com/index.json')
+  return {
+    props: {
+      pokemon: await res.json()
+    } // will be passed to the page component as props
+  }
+}

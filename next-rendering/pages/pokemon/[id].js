@@ -3,24 +3,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-export default function Details() {
+
+
+export default function Details( {pokemon}) {
   const router = useRouter();
   const { id } = router.query;
 
-  const [pokemon, setPokemon] = useState(null);
-  useEffect(() => {
-    async function getPokemon() {
-      const res = await fetch(
-        `https://jherr-pokemon.s3.us-west-1.amazonaws.com/pokemon/${id}.json`
-      );
-
-      setPokemon(await res.json());
-    }
-
-    if (id) {
-      getPokemon();
-    }
-  }, [id]);
 
   if (!pokemon) {
     return null;
@@ -51,7 +39,12 @@ export default function Details() {
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    {pokemon.stats.map(({name, value}) => (
+                        <tr key={name}>
+                            <td>{name}</td>
+                            <td>{value}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
@@ -59,3 +52,17 @@ export default function Details() {
     </div>
   );
 }
+
+export async function getStaticProps({params}) {
+
+    const res = await fetch(
+        `https://jherr-pokemon.s3.us-west-1.amazonaws.com/pokemon/${params.id}.json`
+      );
+    return {
+      props: {
+        pokemon: await res.json() 
+      }, // will be passed to the page component as props
+    }
+  }
+
+  
