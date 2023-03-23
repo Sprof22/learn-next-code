@@ -53,15 +53,15 @@ export default function Details( {pokemon}) {
   );
 }
 
-export async function getStaticProps({params}) {
+export async function getStaticProps() {
 
     const res = await fetch(
-        `https://jherr-pokemon.s3.us-west-1.amazonaws.com/pokemon/${params.id}.json`
+        `https://jherr-pokemon.s3.us-west-1.amazonaws.com/pokemon/${id}.json`
       );
     return {
       props: {
         pokemon: await res.json() 
-      }, // will be passed to the page component as props
+      }
     }
   }
 

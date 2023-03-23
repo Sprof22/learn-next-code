@@ -45,6 +45,7 @@ export default function Home() {
         <title>The Pokemon List</title>
       </Head>
       <div>
+      <h2>Pokemon List</h2>
       <Grid>
 
       {pokemon.map((pokemon) => (
@@ -63,7 +64,7 @@ export default function Home() {
 }
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch ('https://jherr-pokemon.s3.us-west-1.amazonaws.com/index.json')
   return {
     props: {
