@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { Inter } from '@next/font/google'
 import styled from "styled-components";
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
