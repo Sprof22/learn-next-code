@@ -5,7 +5,9 @@ const ProductDetails = () => {
     const router = useRouter();
     const ProductId = router.query.productId
   return (
-    <div>ProductDetails for {ProductId}</div>
+    <div>
+      <div>ProductDetails for {ProductId}</div>
+    </div>
   )
 }
 
