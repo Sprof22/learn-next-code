@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import { Inter } from "next/font/google";
 import Link from "next/link";
-const inter = Inter({ subsets: ["latin"] });
 
 const details = [
   {
@@ -49,7 +47,6 @@ export const MainContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     max-width: 900px;
-    background: red;
   }
   @media (max-width: 1350px) {
     display: grid;
